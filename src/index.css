@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Fundo branco puro */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 6%;
+
+    --card: 0 0% 99%;
+    --card-foreground: 0 0% 6%;
+
+    /* Preto para primário */
+    --primary: 0 0% 6%;
+    --primary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Dourado rico para destaques */
+    --accent: 42 95% 46%;
+    --accent-foreground: 0 0% 6%;
+
+    --border: 0 0% 88%;
+
+    /* Botão CTA — preto */
+    --cta: 0 0% 6%;
+    --cta-foreground: 0 0% 100%;
+
+    /* Dourado para gradientes de texto */
+    --gold: 42 95% 46%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+  }
+}
+
+@layer utilities {
+  /* Gradiente de texto dourado */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(42 95% 38%), hsl(38 90% 54%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gradiente de texto preto — mantido para compatibilidade */
+  .text-gradient-tf {
+    background: linear-gradient(135deg, hsl(0 0% 6%), hsl(0 0% 25%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Sombra do botão CTA */
+  .glow-whatsapp {
+    box-shadow: 0 4px 24px hsl(0 0% 0% / 0.18), 0 1px 4px hsl(0 0% 0% / 0.1);
+  }
+
+  /* Fundo branco com leve textura */
+  .bg-gradient-dark {
+    background: hsl(0 0% 100%);
+  }
+
+  /* Botão CTA preto */
+  .bg-gradient-cta {
+    background: hsl(0 0% 6%);
+  }
+
+  /* Borda sutil preta */
+  .border-tf-glow {
+    box-shadow: 0 0 0 1px hsl(0 0% 6% / 0.12), 0 2px 16px hsl(0 0% 0% / 0.06);
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 4px 24px hsl(0 0% 0% / 0.15), 0 1px 4px hsl(0 0% 0% / 0.08);
+  }
+  50% {
+    box-shadow: 0 6px 32px hsl(0 0% 0% / 0.25), 0 2px 8px hsl(0 0% 0% / 0.12);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
