@@ -83,7 +83,7 @@ const HeroSection = () => {
             className="group inline-flex items-center gap-3 bg-gradient-cta text-white font-display font-medium text-lg md:text-xl px-10 md:px-14 py-5 md:py-6 rounded-full glow-whatsapp animate-pulse-glow transition-transform hover:scale-105 active:scale-95"
           >
             <MessageCircle className="w-6 h-6 transition-transform group-hover:rotate-12" />
-            FALAR COM {consultora.nome.toUpperCase()}
+            COMPRAR AGORA
           </a>
         </motion.div>
 
